@@ -43,5 +43,27 @@ public class Script_03_05 : MonoBehaviour
     {
         public int Value = 1;
     }
-    public List<Data> Item;
+    [SerializeReference]
+    public List<Data1> Item;
+
+#if UNITY_EDITOR
+    [CustomEditor(typeof(Script_03_05))]
+    public class ScriptInsector : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            base.OnInspectorGUI();
+            if (GUILayout.Button("添加数据"))
+            {
+                //这里创建了2种数据
+                Data1 data1 = new Data1() { Value = 1 };
+                Data1 data2 = new Data1() { Value = 2 };
+                //在这里添加引用
+                //data1和data2虽然被添加了多次，但是只会被序列化一次
+                (target as Script_03_05).Item = new List<Data1> { data1, data1, data2, data2 };
+            }
+            //强制设置场景为dirty状态并重新保存
+            EditorUtility.SetDirty(target);
+        }
+    }
 }
