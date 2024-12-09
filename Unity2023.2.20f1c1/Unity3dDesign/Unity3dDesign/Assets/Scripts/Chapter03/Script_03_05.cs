@@ -66,4 +66,5 @@ public class Script_03_05 : MonoBehaviour
             EditorUtility.SetDirty(target);
         }
     }
+#endif
 }
