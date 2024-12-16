@@ -30,6 +30,20 @@ public class Script_03_06 : ScriptableObject
         AssetDatabase.Refresh();
     }
 
+    [System.Serializable]
+    public class Data
+    {
+        public int a;//序列化a
+        [System.NonSerialized]//不序列化b
+        public int b;
+    }
+    //序列化data数据
+    [SerializeField]
+    private Data data;
+
+    //序列化 get set
+    [field: SerializeField]
+    public int value { get; private set; }
 }
 
 
