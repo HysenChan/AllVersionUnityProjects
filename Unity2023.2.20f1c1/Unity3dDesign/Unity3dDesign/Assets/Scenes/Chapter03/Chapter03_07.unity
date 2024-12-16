@@ -164,11 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1ee64e411f70b418782940e5622ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyStr: "\u7B2C\u4E00\u884C\n\u7B2C\u4E8C\u884C\n\u7B2C\u4E09\u884C"
-  a1: 36
-  a2: 8.3
-  tips: 
-  color: {r: 0, g: 0, b: 0, a: 0}
+  a: 0
 --- !u!20 &705065665
 Camera:
   m_ObjectHideFlags: 0
