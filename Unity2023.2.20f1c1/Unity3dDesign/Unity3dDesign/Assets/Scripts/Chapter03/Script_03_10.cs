@@ -12,14 +12,16 @@ public class Script_03_10 : MonoBehaviour
 {
     IEnumerator Start()
     {
-        //10秒结束
-        yield return new CustomWait(10f, 1f, () =>
+        for (int i = 0; i < 10; i++)
         {
-            Debug.LogFormat($"每过1秒回调一次:{Time.time}");
-        });
-        Debug.Log("10秒结束");
+            //10秒结束
+            yield return new CustomWait(10f, 1f, () =>
+            {
+                Debug.LogFormat($"每过1秒回调一次:{Time.time}");
+            });
+            Debug.Log("10秒结束");
+        }
     }
-
     public class CustomWait : CustomYieldInstruction
     {
         public override bool keepWaiting
