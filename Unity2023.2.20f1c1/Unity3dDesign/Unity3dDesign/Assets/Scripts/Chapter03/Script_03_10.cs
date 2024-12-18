@@ -67,31 +67,43 @@ public class Script_03_10 : MonoBehaviour
     ///Awaitable
     ///
 
+    //private async Awaitable Start()
+    //{
+    //    ////等1帧
+    //    //await Awaitable.NextFrameAsync();
+    //    ////等1秒
+    //    //await Awaitable.WaitForSecondsAsync(1f);
+    //    ////等下一帧FixedUpdate之后
+    //    //await Awaitable.FixedUpdateAsync();
+    //    ////等到当前帧最后
+    //    //await Awaitable.EndOfFrameAsync();
+
+    //    //等待资源加载完毕
+    //    var r = Resources.LoadAsync<Material>("name");
+    //    await r;
+    //    Material material = (Material)r.asset;
+
+    //    //等待场景加载完毕
+    //    await SceneManager.LoadSceneAsync("SomeScene");
+    //    //等待Assetbundle加载完毕
+    //    var a = AssetBundle.LoadFromFileAsync("path");
+    //    await a;
+
+    //    //等待Asset文件加载完毕
+    //    AssetBundle ab = a.assetBundle;
+    //    await ab.LoadAssetAsync("name");
+    //}
+
     private async Awaitable Start()
     {
-        ////等1帧
-        //await Awaitable.NextFrameAsync();
-        ////等1秒
-        //await Awaitable.WaitForSecondsAsync(1f);
-        ////等下一帧FixedUpdate之后
-        //await Awaitable.FixedUpdateAsync();
-        ////等到当前帧最后
-        //await Awaitable.EndOfFrameAsync();
+        //子线程和主线程切换
+        //进入子线程
+        await Awaitable.BackgroundThreadAsync();
+        Debug.Log($"Thread:{Thread.CurrentThread.ManagedThreadId}");
 
-        //等待资源加载完毕
-        var r = Resources.LoadAsync<Material>("name");
-        await r;
-        Material material = (Material)r.asset;
-
-        //等待场景加载完毕
-        await SceneManager.LoadSceneAsync("SomeScene");
-        //等待Assetbundle加载完毕
-        var a = AssetBundle.LoadFromFileAsync("path");
-        await a;
-
-        //等待Asset文件加载完毕
-        AssetBundle ab = a.assetBundle;
-        await ab.LoadAssetAsync("name");
+        //回到主线程
+        await Awaitable.MainThreadAsync();
+        Debug.Log($"Thread:{Thread.CurrentThread.ManagedThreadId}");
     }
 
 }
