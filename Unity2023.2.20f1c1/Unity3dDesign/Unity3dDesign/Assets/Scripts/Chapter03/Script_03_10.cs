@@ -94,16 +94,36 @@ public class Script_03_10 : MonoBehaviour
     //    await ab.LoadAssetAsync("name");
     //}
 
+    //子线程和主线程切换
+    //private async Awaitable Start()
+    //{
+    //    //进入子线程
+    //    await Awaitable.BackgroundThreadAsync();
+    //    Debug.Log($"Thread:{Thread.CurrentThread.ManagedThreadId}");
+
+    //    //回到主线程
+    //    await Awaitable.MainThreadAsync();
+    //    Debug.Log($"Thread:{Thread.CurrentThread.ManagedThreadId}");
+    //}
+
+    //异步流程还没有结束时取消异步调用
+    private CancellationTokenSource m_TokenSource;
+
     private async Awaitable Start()
     {
-        //子线程和主线程切换
-        //进入子线程
-        await Awaitable.BackgroundThreadAsync();
-        Debug.Log($"Thread:{Thread.CurrentThread.ManagedThreadId}");
-
-        //回到主线程
-        await Awaitable.MainThreadAsync();
-        Debug.Log($"Thread:{Thread.CurrentThread.ManagedThreadId}");
+        m_TokenSource = new CancellationTokenSource();
+        try
+        {
+            await Awaitable.WaitForSecondsAsync(1, m_TokenSource.Token);
+        }
+        catch (OperationCanceledException)
+        {
+        }
     }
 
+    private void Cancel()
+    {
+        m_TokenSource?.Cancel();
+        m_TokenSource?.Dispose();
+    }
 }
