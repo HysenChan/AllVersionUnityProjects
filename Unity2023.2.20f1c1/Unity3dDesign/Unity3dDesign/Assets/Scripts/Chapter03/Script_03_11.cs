@@ -27,5 +27,11 @@ public class Script_03_11 : MonoBehaviour
         Material assetMat = Resources.Load<Material>("Chapter03/Script_03_11_Cube_Material");
         //修改材质
         gameObject.GetComponent<MeshRenderer>().material = assetMat;
+
+        Destroy(gameObject);
+        Debug.Log(gameObject.name);//不报错
+
+        DestroyImmediate(gameObject);
+        Debug.Log(gameObject.name);//报错
     }
 }
