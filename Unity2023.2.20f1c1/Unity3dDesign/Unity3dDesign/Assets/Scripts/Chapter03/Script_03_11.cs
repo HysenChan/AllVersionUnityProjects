@@ -43,14 +43,27 @@ public class Script_03_11 : MonoBehaviour
         ////将go2放在go的节点下
         //go2.transform.SetParent(go.transform, false);
 
-        GameObject root = GameObject.Find("Root");//获取根接点
+        //GameObject root = GameObject.Find("Root");//获取根接点
 
-        Transform b = root.transform.Find("B");//从根接点获取B对象
+        //Transform b = root.transform.Find("B");//从根接点获取B对象
 
-        b.transform.SetAsFirstSibling();//设置为第一个
-        b.transform.SetAsLastSibling();//设置为最后一个
+        //b.transform.SetAsFirstSibling();//设置为第一个
+        //b.transform.SetAsLastSibling();//设置为最后一个
 
-        Transform a = root.transform.Find("A");//获取A对象
-        b.SetSiblingIndex(a.GetSiblingIndex() + 1);//将B设置到A的后面
+        //Transform a = root.transform.Find("A");//获取A对象
+        //b.SetSiblingIndex(a.GetSiblingIndex() + 1);//将B设置到A的后面
+
+        GameObject root = GameObject.Find("Root");//获取根节点
+        root.transform.Find("A");//获取子节点
+        root.transform.Find("A/Child/B"); //获取带路径的子节点
+
+        root.transform.GetChild(0);//通过索引获取子节点
+
+        //只遍历子节点
+        foreach (var child in root.transform) { }
+        //遍历自身节点并且包含所有子孙节点
+        foreach(var item in root.transform.GetComponentsInChildren<Transform>(true)) { }//true代表包含未激活的游戏对象
+        //遍历自身节点并且包含所有父节点
+        foreach(var item in root.transform.GetComponentsInParent<Transform>(true)) { }
     }
 }
