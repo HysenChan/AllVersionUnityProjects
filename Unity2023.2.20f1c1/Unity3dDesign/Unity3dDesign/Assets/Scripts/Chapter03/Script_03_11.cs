@@ -103,9 +103,13 @@ public class Script_03_11 : MonoBehaviour
         //    }
         //}
 
-        //获取内存中的所有游戏对象
-        GameObject.FindFirstObjectByType<GameObject>();
-        //获取内存中的所有Script_03_11脚本对象
-        GameObject.FindFirstObjectByType<Script_03_11>();
+        ////获取内存中的所有游戏对象
+        //GameObject.FindFirstObjectByType<GameObject>();
+        ////获取内存中的所有Script_03_11脚本对象
+        //GameObject.FindFirstObjectByType<Script_03_11>();
+
+        //不卸载对象
+        GameObject root = GameObject.Find("Root");
+        DontDestroyOnLoad(root);
     }
 }
