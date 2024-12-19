@@ -86,21 +86,26 @@ public class Script_03_11 : MonoBehaviour
         ///通过场景获取游戏对象
         ///
 
-        //方法1：获取当前激活的场景
-        Scene scene = SceneManager.GetActiveScene();
-        //获取场景中的根节点游戏对象
-        foreach (var go in scene.GetRootGameObjects())
-        {
-            Debug.Log(go.name);
-        }
+        ////方法1：获取当前激活的场景
+        //Scene scene = SceneManager.GetActiveScene();
+        ////获取场景中的根节点游戏对象
+        //foreach (var go in scene.GetRootGameObjects())
+        //{
+        //    Debug.Log(go.name);
+        //}
 
-        //方法2：
-        for (int i = 0; i < SceneManager.loadedSceneCount; i++)
-        {
-            foreach (var root in SceneManager.GetSceneAt(i).GetRootGameObjects())
-            {
-                Debug.Log(root.name);
-            }
-        }
+        ////方法2：
+        //for (int i = 0; i < SceneManager.loadedSceneCount; i++)
+        //{
+        //    foreach (var root in SceneManager.GetSceneAt(i).GetRootGameObjects())
+        //    {
+        //        Debug.Log(root.name);
+        //    }
+        //}
+
+        //获取内存中的所有游戏对象
+        GameObject.FindFirstObjectByType<GameObject>();
+        //获取内存中的所有Script_03_11脚本对象
+        GameObject.FindFirstObjectByType<Script_03_11>();
     }
 }
