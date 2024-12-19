@@ -53,17 +53,54 @@ public class Script_03_11 : MonoBehaviour
         //Transform a = root.transform.Find("A");//获取A对象
         //b.SetSiblingIndex(a.GetSiblingIndex() + 1);//将B设置到A的后面
 
-        GameObject root = GameObject.Find("Root");//获取根节点
-        root.transform.Find("A");//获取子节点
-        root.transform.Find("A/Child/B"); //获取带路径的子节点
+        //GameObject root = GameObject.Find("Root");//获取根节点
+        //root.transform.Find("A");//获取子节点
+        //root.transform.Find("A/Child/B"); //获取带路径的子节点
 
-        root.transform.GetChild(0);//通过索引获取子节点
+        //root.transform.GetChild(0);//通过索引获取子节点
 
-        //只遍历子节点
-        foreach (var child in root.transform) { }
-        //遍历自身节点并且包含所有子孙节点
-        foreach(var item in root.transform.GetComponentsInChildren<Transform>(true)) { }//true代表包含未激活的游戏对象
-        //遍历自身节点并且包含所有父节点
-        foreach(var item in root.transform.GetComponentsInParent<Transform>(true)) { }
+        ////只遍历子节点
+        //foreach (var child in root.transform) { }
+        ////遍历自身节点并且包含所有子孙节点
+        //foreach(var item in root.transform.GetComponentsInChildren<Transform>(true)) { }//true代表包含未激活的游戏对象
+        ////遍历自身节点并且包含所有父节点
+        //foreach(var item in root.transform.GetComponentsInParent<Transform>(true)) { }
+
+        ///通过tag获取对象
+
+        ////获取一个符合Tag名的对象
+        //GameObject.FindGameObjectsWithTag("Player");
+        ////获取所有符合Tag名的对象
+        //foreach (var item in GameObject.FindGameObjectsWithTag("Player")) { }
+
+        //GameObject root = GameObject.Find("Root");//获取根节点
+        ////遍历自身节点并且包含所有子孙节点
+        //foreach(var item in root.transform.GetComponentsInChildren<Transform>(true))
+        //{
+        //    if(item.CompareTag("Player"))
+        //    {
+        //        //判断子节点是否符合Tag名
+        //    }
+        //}
+
+        ///通过场景获取游戏对象
+        ///
+
+        //方法1：获取当前激活的场景
+        Scene scene = SceneManager.GetActiveScene();
+        //获取场景中的根节点游戏对象
+        foreach (var go in scene.GetRootGameObjects())
+        {
+            Debug.Log(go.name);
+        }
+
+        //方法2：
+        for (int i = 0; i < SceneManager.loadedSceneCount; i++)
+        {
+            foreach (var root in SceneManager.GetSceneAt(i).GetRootGameObjects())
+            {
+                Debug.Log(root.name);
+            }
+        }
     }
 }
