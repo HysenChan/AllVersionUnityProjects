@@ -62,7 +62,7 @@ public class Script_03_11 : MonoBehaviour
         ////只遍历子节点
         //foreach (var child in root.transform) { }
         ////遍历自身节点并且包含所有子孙节点
-        //foreach(var item in root.transform.GetComponentsInChildren<Transform>(true)) { }//true代表包含未激活的游戏对象
+        //foreach(var item in root.transform.GetComponentsInChildren<Transform>(true)) { }//true代表包含未激活的游戏对象(例如在Hierarchy视图里隐藏的节点)
         ////遍历自身节点并且包含所有父节点
         //foreach(var item in root.transform.GetComponentsInParent<Transform>(true)) { }
 
