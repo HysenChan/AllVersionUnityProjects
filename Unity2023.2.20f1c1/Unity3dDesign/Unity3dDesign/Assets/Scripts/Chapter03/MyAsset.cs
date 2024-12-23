@@ -5,9 +5,4 @@ using UnityEngine;
 
 public class MyAsset : AssetPostprocessor
 {
-    private void OnPostprocessTexture(Texture2D texture)
-    {
-        context.LogImportError("´íÎó");
-        context.LogImportWarning("¾¯¸æ");
-    }
 }

@@ -10,6 +10,8 @@ public class Script_04_01 : MonoBehaviour
         Text text = GetComponent<Text>();
         text.text = "Hello World!";
         text.fontSize = 30;
-        text.font = Resources.Load<Font>("Chapter04/Font");
+        text.font = Resources.Load<Font>("Chapter04/Font0");
+
+        Debug.Log("±êÇ©:<size=15><color=green>Ç¶Ì×±êÇ©</color></size>");
     }
 }
