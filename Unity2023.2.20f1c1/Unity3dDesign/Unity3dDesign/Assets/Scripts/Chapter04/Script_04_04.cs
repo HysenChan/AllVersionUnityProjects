@@ -7,18 +7,30 @@ using UnityEngine.UI;
 
 public class Script_04_04 : MonoBehaviour
 {
+    //private void Start()
+    //{
+    //    Button button = GetComponent<Button>();
+    //    void onButtonClick()
+    //    {
+    //        Debug.Log("°´Å¥µã»÷");
+    //    }
+    //    button.onClick.AddListener(onButtonClick);
+
+    //    //ÒÆ³ý°´Å¥¼àÌýÊ±¼ä
+    //    //button.onClick.RemoveListener(onButtonClick);
+    //    //ÒÆ³ýËùÓÐ°´Å¥¼àÌýÊ±¼ä
+    //    //button.onClick.RemoveAllListeners();
+    //}
+
+    public Toggle[] toggles;
     private void Start()
     {
-        Button button = GetComponent<Button>();
-        void onButtonClick()
+        foreach (var toggle in toggles)
         {
-            Debug.Log("°´Å¥µã»÷");
+            toggle.onValueChanged.AddListener((selected) =>
+            {
+                Debug.LogFormat("toggle = {0} selected = {1}", toggle.name, selected);
+            });
         }
-        button.onClick.AddListener(onButtonClick);
-
-        //ÒÆ³ý°´Å¥¼àÌýÊ±¼ä
-        //button.onClick.RemoveListener(onButtonClick);
-        //ÒÆ³ýËùÓÐ°´Å¥¼àÌýÊ±¼ä
-        //button.onClick.RemoveAllListeners();
     }
 }
