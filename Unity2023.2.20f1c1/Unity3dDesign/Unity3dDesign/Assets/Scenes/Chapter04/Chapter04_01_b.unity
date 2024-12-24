@@ -346,7 +346,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u56FE\u6587<sprite name=EmojiOne_0>\u6DF7\u6392"
+  m_text: "\u56FE\u6587<sprite name=EmojiOne_0>\u6DF7\u6392\n<sprite name=EmojiOne_2>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d9610823c1fc70c45ae46e527f04a8b5, type: 2}
   m_sharedMaterial: {fileID: -9013536408327008315, guid: d9610823c1fc70c45ae46e527f04a8b5, type: 2}
