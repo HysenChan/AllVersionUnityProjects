@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Script_04_09 : MonoBehaviour
+public class Script_04_07 : MonoBehaviour
 {
     public Image image;
     private void Awake()
