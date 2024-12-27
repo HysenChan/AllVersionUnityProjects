@@ -38,7 +38,7 @@ public class Script_04_11 : MonoBehaviour
     {
         Debug.Log($"{atlas}开始加载");
         //通过Action将加载后的图集对象回调出去
-        action(Resources.Load<SpriteAtlas>(atlas));
+        action(Resources.Load<SpriteAtlas>($"Chapter04/Atlas/{atlas}"));
     }
 
     void AtlasRegistered(SpriteAtlas atlas)
