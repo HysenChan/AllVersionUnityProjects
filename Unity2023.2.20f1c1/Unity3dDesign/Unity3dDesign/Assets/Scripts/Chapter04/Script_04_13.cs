@@ -12,6 +12,7 @@ public class Script_04_13 : MonoBehaviour
 {
     public Button button;
     public Image image;
+    public TMP_Text text;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class Script_04_13 : MonoBehaviour
 
         //对图片进行监听
         UGUIEventListener.Get(image.gameObject).onClick = OnClick;
+        UGUIEventListener.Get(text.gameObject).onClick = OnClick;
     }
 
     void OnClick(GameObject go)
@@ -33,6 +35,10 @@ public class Script_04_13 : MonoBehaviour
         else if (go == image.gameObject)
         {
             Debug.Log("点击图片");
+        }
+        else if (go == text.gameObject)
+        {
+            Debug.Log("点击文本");
         }
     }
 }
