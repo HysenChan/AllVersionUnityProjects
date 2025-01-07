@@ -1,0 +1,20 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/Chapter05/05_01.uss?fileID=7433441132597879392&amp;guid=6810e23e62a94bd499b895202d45b4f4&amp;type=3#05_01" />
+    <engine:VisualElement name="BG" style="flex-grow: 1; background-image: resource(&apos;Chapter04/Unity_logo&apos;); -unity-background-scale-mode: scale-and-crop;" />
+    <engine:VisualElement style="position: absolute; top: 0; left: 0; right: auto; bottom: auto; overflow: hidden;">
+        <engine:Button text="Button" />
+        <engine:Button text="Button" />
+    </engine:VisualElement>
+    <engine:VisualElement style="position: absolute; top: 0; left: auto; right: 0; bottom: auto; overflow: hidden;">
+        <engine:Button text="Button" />
+        <engine:Button text="Button" />
+    </engine:VisualElement>
+    <engine:VisualElement style="position: absolute; top: auto; left: 0; right: auto; bottom: 0; overflow: hidden;">
+        <engine:Button text="Button" />
+        <engine:Button text="Button" />
+    </engine:VisualElement>
+    <engine:VisualElement style="position: absolute; top: auto; left: auto; right: 0; bottom: 0; overflow: hidden;">
+        <engine:Button text="Button" />
+        <engine:Button text="Button" />
+    </engine:VisualElement>
+</engine:UXML>

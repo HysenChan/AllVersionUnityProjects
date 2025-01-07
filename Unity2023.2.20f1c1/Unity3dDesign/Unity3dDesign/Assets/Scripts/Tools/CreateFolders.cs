@@ -25,7 +25,7 @@ public class CreateFolders : EditorWindow
 
     private void CreateEmptyFolders()
     {
-        string[] paths = { "Assets/Prefab", "Assets/Resources", "Assets/Scenes", "Assets/Scripts" };
+        string[] paths = { "Assets/Prefab", "Assets/Resources", "Assets/Scenes", "Assets/Scripts", "Assets/Animation", "Assets/Material"};
 
         foreach (string path in paths)
         {
