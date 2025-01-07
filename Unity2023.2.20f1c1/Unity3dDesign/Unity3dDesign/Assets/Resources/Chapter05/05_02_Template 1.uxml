@@ -1,7 +1,7 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Resources/Chapter05/05_01.uss?fileID=7433441132597879392&amp;guid=6810e23e62a94bd499b895202d45b4f4&amp;type=3#05_01" />
     <engine:VisualElement style="flex-grow: 1; flex-direction: row;">
-        <engine:Label text="Label" style="margin-top: 9px; margin-right: 9px; margin-bottom: 9px; margin-left: 9px; width: 50px; max-width: 100px; height: 50px;" />
-        <engine:Label text="Label" style="margin-top: 9px; margin-right: 9px; margin-bottom: 9px; margin-left: 9px; width: 30px; max-width: 100px; height: 30px;" />
+        <engine:Label text="Label" style="margin-top: 9px; margin-right: 9px; margin-bottom: 9px; margin-left: 9px; width: 50px; max-width: 100px; height: 50px; -unity-font-definition: resource(&apos;Chapter04/FZY3JW/FZY3JW&apos;);" />
+        <engine:Label text="Label" style="margin-top: 9px; margin-right: 9px; margin-bottom: 9px; margin-left: 9px; width: 30px; max-width: 100px; height: 30px; -unity-font-definition: resource(&apos;Chapter04/FZY3JW/FZY3JW&apos;);" />
     </engine:VisualElement>
 </engine:UXML>
