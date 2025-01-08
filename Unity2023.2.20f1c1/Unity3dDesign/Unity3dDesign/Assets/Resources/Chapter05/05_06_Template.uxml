@@ -1,0 +1,10 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:RadioButtonGroup label="Radio Button Group">
+        <engine:RadioButton label="Radio Button" />
+        <engine:RadioButton label="Radio Button" />
+    </engine:RadioButtonGroup>
+    <engine:Foldout text="Foldout">
+        <engine:Label text="Label" />
+        <engine:VisualElement style="flex-grow: 1; position: relative; width: 100px; height: 100px; left: 0; top: 0; right: 0; bottom: 0; max-height: 100px; max-width: 100px; min-width: 50px; min-height: 50px; background-image: resource(&apos;Chapter04/unityicon2&apos;);" />
+    </engine:Foldout>
+</engine:UXML>
