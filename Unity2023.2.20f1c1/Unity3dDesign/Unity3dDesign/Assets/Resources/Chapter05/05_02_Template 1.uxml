@@ -1,7 +1,6 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/Resources/Chapter05/05_01.uss?fileID=7433441132597879392&amp;guid=6810e23e62a94bd499b895202d45b4f4&amp;type=3#05_01" />
-    <engine:VisualElement style="flex-grow: 1; flex-direction: row;">
-        <engine:Label text="Label" style="margin-top: 9px; margin-right: 9px; margin-bottom: 9px; margin-left: 9px; width: 50px; max-width: 100px; height: 50px; -unity-font-definition: resource(&apos;Chapter04/FZY3JW/FZY3JW&apos;);" />
-        <engine:Label text="Label" style="margin-top: 9px; margin-right: 9px; margin-bottom: 9px; margin-left: 9px; width: 30px; max-width: 100px; height: 30px; -unity-font-definition: resource(&apos;Chapter04/FZY3JW/FZY3JW&apos;);" />
-    </engine:VisualElement>
+    <Style src="project://database/Assets/Resources/Chapter05/05_02.uss?fileID=7433441132597879392&amp;guid=de03916fc61f18e4e8765a6db9bd9d74&amp;type=3#05_02" />
+    <engine:Label text="中文换行中文换行中文换行中文换行中文换行中文换行中文换行中文换行中文换行中文换行" style="width: 100px; height: 100px; overflow: hidden; flex-direction: column; align-items: stretch; white-space: normal; text-overflow: ellipsis; word-spacing: 0; -unity-paragraph-spacing: 0; background-image: resource(&apos;Chapter04/Atlas/unityicon2&apos;); -unity-background-scale-mode: scale-to-fit; background-color: rgba(0, 0, 0, 0); -unity-background-image-tint-color: rgb(255, 255, 255); border-left-color: rgba(255, 0, 134, 0); border-right-color: rgba(255, 0, 134, 0); border-top-color: rgba(255, 0, 134, 0); border-bottom-color: rgba(255, 0, 134, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; border-top-left-radius: 100px; border-top-right-radius: 100px; border-bottom-right-radius: 100px; border-bottom-left-radius: 100px; transform-origin: left top; cursor: resource(&apos;Chapter04/rongyuzhizhan_vs&apos;);" />
+    <engine:Button text="Button" name="MyButton" class="move" />
+    <engine:VisualElement name="MyImage" style="flex-grow: 1; background-image: resource(&apos;Chapter04/Unity_logo&apos;); position: absolute; height: 91px; width: 154px; top: 176px; left: 0;" />
 </engine:UXML>
