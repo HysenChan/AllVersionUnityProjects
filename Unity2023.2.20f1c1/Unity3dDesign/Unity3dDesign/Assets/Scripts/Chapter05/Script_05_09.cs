@@ -28,6 +28,15 @@ public class Script_05_09 : MonoBehaviour
         treeView.makeItem = () => new Label() { focusable = true };
         treeView.bindItem = (VisualElement element, int index) =>
             (element as Label).text = treeView.GetItemDataForIndex<string>(index);
-        treeView.selectionChanged += (o) => { };
+        treeView.selectionChanged += (o) =>
+        {
+            //获取当前选中的项
+            var selectedItems = treeView.selectedItems;
+            foreach (var item in selectedItems)
+            {
+                //输出选中的项
+                Debug.Log($"当前选中的项:{item}");
+            }
+        };
     }
 }
