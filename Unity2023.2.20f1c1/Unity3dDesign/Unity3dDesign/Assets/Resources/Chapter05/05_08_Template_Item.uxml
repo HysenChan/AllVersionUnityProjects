@@ -1,0 +1,6 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement name="Rect" style="flex-grow: 1; width: 500px; height: 100px; max-width: 500px; max-height: 100px;">
+        <engine:Button name="button" style="width: 100px; height: 100px; background-image: resource(&apos;Chapter04/unityicon2&apos;);" />
+        <engine:Label text="文字描述" name="label" style="position: absolute; top: 30px; left: 114px; font-size: 22px;" />
+    </engine:VisualElement>
+</engine:UXML>

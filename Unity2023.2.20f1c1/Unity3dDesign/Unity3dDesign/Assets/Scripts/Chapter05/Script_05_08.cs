@@ -29,10 +29,17 @@ public class Script_05_08 : MonoBehaviour
             return ItemAsset.CloneTree();
         };
 
+        //关掉ListView的选择事件
+        listView.selectionType = SelectionType.None;
         Action<VisualElement, int> bindItem = (e, i) =>
         {
             //屏幕上的对象已经准备好开始刷新数据
-            e.Q<Label>().text = listView.itemsSource[i].ToString();
+            var label = e.Q<Label>();
+            var button = e.Q<Button>("button");
+            label.text = listView.itemsSource[i].ToString();
+            //因为Button对象是循环使用的，所以每次都要清空之前的监听
+            button.clickable = null;
+            button.clicked += () => { Debug.Log($"点击了第{i}个按钮对象"); };
         };
 
         listView.selectedIndicesChanged += (indexes) =>
