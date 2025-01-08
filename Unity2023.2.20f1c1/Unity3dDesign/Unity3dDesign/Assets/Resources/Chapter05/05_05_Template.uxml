@@ -1,0 +1,11 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:Button text="Button" />
+    <engine:Toggle label="Toggle" />
+    <engine:Scroller high-value="100" direction="Horizontal" value="42" />
+    <engine:TextField label="Text Field" placeholder-text="filler text" />
+    <engine:Slider label="Slider" value="42" high-value="100" name="mySlider" />
+    <engine:MinMaxSlider label="Min/Max Slider" value="10,12" low-limit="-10" high-limit="40" name="myMinMaxSlider" />
+    <engine:ProgressBar value="22" title="my-progress" />
+    <engine:DropdownField label="Dropdown" />
+    <engine:EnumField label="Enum" value="Center" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" />
+</engine:UXML>
