@@ -11,11 +11,9 @@ public class Script_05_11 : MonoBehaviour
     {
         UIDocument document = GetComponent<UIDocument>();
         var root = document.rootVisualElement;
-
-        var button = root.Q<Button>();
-        var label = root.Q<Label>();
-        button.Add(label);
-
-        document.rootVisualElement.Add(label);
+        var visualTreeAsset = Resources.Load<VisualTreeAsset>("Chapter05/05_11_Template_Item");
+        var template = visualTreeAsset.CloneTree();
+        root.Add(template);//克隆到Hierarchy视图中
+        template.Q<Label>().text = "更换文字";
     }
 }
