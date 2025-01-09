@@ -32,9 +32,9 @@ public class Script_05_14 : MonoBehaviour
             var pos = new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y);
             //转换自适应后的UI坐标
             pos = RuntimePanelUtils.ScreenToPanel(m_Image.panel, pos);
-            //图片的宽高均为200像素，这里需要取中心点
-            pos.x -= 200f / 2f;
-            pos.y -= 200f / 2f;
+            //图片的宽高均为100像素，这里需要取中心点
+            pos.x -= 100f / 2f;
+            pos.y -= 100f / 2f;
             //设置坐标
             m_Image.transform.position = pos;
         }
