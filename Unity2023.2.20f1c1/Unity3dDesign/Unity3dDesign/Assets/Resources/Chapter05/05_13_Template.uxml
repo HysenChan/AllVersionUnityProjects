@@ -1,0 +1,4 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:VisualElement style="flex-grow: 1; background-image: resource(&apos;Chapter04/unityicon2&apos;); width: 100px; height: 100px; max-width: 100px; max-height: 100px;" />
+    <engine:VisualElement style="flex-grow: 1; background-image: resource(&apos;Chapter04/unityicon&apos;); width: 100px; height: 100px; max-width: 100px; max-height: 100px;" />
+</engine:UXML>
