@@ -1,0 +1,13 @@
+.unity-text-element {
+    color: rgb(255, 0, 0);
+    font-size: 24px;
+}
+
+.unity-button {
+    background-image: resource('Chapter04/unityicon2');
+}
+
+.style {
+    color: rgb(255, 0, 247);
+    font-size: 40px;
+}
