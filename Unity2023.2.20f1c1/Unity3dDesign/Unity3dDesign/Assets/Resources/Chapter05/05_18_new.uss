@@ -1,0 +1,8 @@
+#image {
+    background-image: resource('Chapter04/unityicon');
+}
+
+#label {
+    -unity-background-image-tint-color: rgb(0, 72, 255);
+    color: rgb(8, 255, 0);
+}

@@ -1,4 +1,9 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Resources/Chapter05/05_18.uss?fileID=7433441132597879392&amp;guid=cb8b5e65955e72a48b2424072bf92410&amp;type=3#05_18" />
-    <engine:Button text="Button" style="max-width: 100px; max-height: 100px; width: 100px; height: 100px;" />
+    <Style src="project://database/Assets/Resources/Chapter05/05_18_new.uss?fileID=7433441132597879392&amp;guid=1d6ae73afc20ce843a666cb4b511324c&amp;type=3#05_18_new" />
+    <engine:VisualElement name="image" style="flex-grow: 1; width: 100px; height: 100px; max-width: 100px; max-height: 100px;">
+        <engine:Label text="我是样式" name="label" style="position: absolute; top: 108px; left: 20px;" />
+    </engine:VisualElement>
+    <engine:Button text="切换样式1" name="style1" style="position: absolute; top: 12px; left: 121px;" />
+    <engine:Button text="切换样式2" name="style2" style="position: absolute; top: 61px; left: 122px;" />
 </engine:UXML>
