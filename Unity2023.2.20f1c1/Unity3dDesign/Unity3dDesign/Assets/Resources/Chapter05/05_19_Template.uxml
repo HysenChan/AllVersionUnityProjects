@@ -1,0 +1,5 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <engine:VisualElement style="flex-grow: 1; background-image: resource(&apos;Chapter04/rongyuzhizhan_vs&apos;); position: absolute; width: 100px; height: 100px; top: 67px; left: 0;" />
+    <engine:Button text="Button" />
+    <engine:Toggle label="Toggle" />
+</engine:UXML>
