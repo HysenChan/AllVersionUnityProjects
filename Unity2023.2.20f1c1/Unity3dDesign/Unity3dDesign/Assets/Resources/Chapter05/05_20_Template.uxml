@@ -1,0 +1,7 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <engine:IntegerField label="整形" value="50" />
+    <engine:Vector3Field label="游戏坐标" value="10,20,30" />
+    <editor:ObjectField label="游戏对象" />
+    <editor:PropertyField />
+    <engine:Button text="重置" />
+</engine:UXML>
