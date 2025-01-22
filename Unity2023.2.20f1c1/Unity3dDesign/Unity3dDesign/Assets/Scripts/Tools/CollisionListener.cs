@@ -29,7 +29,21 @@ public class CollisionListener : MonoBehaviour
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
-        onCollisionStay2D.Invoke(gameObject, collision.collider.gameObject);
+        //onCollisionStay2D.Invoke(gameObject, collision.collider.gameObject);
+        foreach (ContactPoint2D contact in collision.contacts)
+        {
+            //»æÖÆÏß¶Î
+            Debug.DrawLine(contact.point, transform.position, Color.red);
+            var direction = transform.InverseTransformPoint(contact.point);
+            if (direction.x > 0f)
+                print("ÓÒÅö×²");
+            if (direction.x < 0f)
+                print("×óÅö×²");
+            if (direction.y > 0f)
+                print("ÉÏÅö×²");
+            if (direction.y < 0f)
+                print("ÏÂÅö×²");
+        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
