@@ -27,18 +27,42 @@ public class Script_07_03 : MonoBehaviour
         }));
     }
 
-    IEnumerator Play(string name, Action finish)
+    void Play(string name)
     {
         var clip = m_Dict[name];
         //使用Playable播放动画
         AnimationPlayableUtilities.PlayClip(m_Animator, clip, out m_PlayableGraph);
+    }
+
+    IEnumerator Play(string name, Action finish)
+    {
+        Play(name);
         //等待播放的动画时长后返回
-        yield return new WaitForSeconds(clip.length);
+        yield return new WaitForSeconds(m_Dict[name].length);
         finish?.Invoke();
     }
 
     private void OnDestroy()
     {
         m_PlayableGraph.Destroy();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            StartCoroutine(Play("Attack", () =>
+            {
+                Play("Idle");
+            }));
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            StartCoroutine(Play("Die", () =>
+            {
+                Play("Idle");
+            }));
+        }
+
     }
 }
