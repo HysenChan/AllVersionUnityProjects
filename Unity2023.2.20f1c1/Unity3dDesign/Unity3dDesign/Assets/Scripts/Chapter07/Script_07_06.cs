@@ -31,7 +31,7 @@ public class Script_07_06 : MonoBehaviour
         var audioPlayableOutput = AudioPlayableOutput.Create(m_PlayableGraph, "Audio", GetComponent<AudioSource>());
         audioPlayableOutput.SetSourcePlayable(m_AudioMixerPlayable);
 
-        m_AudioMixerPlayable.Play();
+        m_PlayableGraph.Play();
     }
 
     private void Update()
@@ -40,5 +40,11 @@ public class Script_07_06 : MonoBehaviour
         weight = Mathf.Clamp01(weight);
         m_AudioMixerPlayable.SetInputWeight(0, 1.0f - weight);
         m_AudioMixerPlayable.SetInputWeight(1, weight);
+    }
+
+    private void OnDisable()
+    {
+        //Ïú»ÙPlayableGraph
+        m_PlayableGraph.Destroy();
     }
 }
