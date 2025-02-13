@@ -48,4 +48,9 @@ public class Script_07_07 : MonoBehaviour
             //每一帧循环触发
         }
     }
+
+    private void OnDisable()
+    {
+        m_PlayableGraph.Destroy();
+    }
 }
