@@ -1,12 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
-using UnityEngine.Animations;
-using UnityEngine.Audio;
-using UnityEngine.Playables;
-using UnityEngine.UI;
 
 public class Script_07_10 : MonoBehaviour
 {
@@ -15,7 +7,7 @@ public class Script_07_10 : MonoBehaviour
 
     private float m_JumpHeight = 3.0f;
     private float m_Gravity = -9.81f;
-    private Vector3 m_Velocity;
+    private float m_Velocity;
 
     private void Start()
     {
@@ -28,38 +20,59 @@ public class Script_07_10 : MonoBehaviour
         bool isGround = m_CharacterController.isGrounded;
         if (isGround)
         {
-            if(Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyUp(KeyCode.Space))
             {
                 //接触地面后才能跳起来
-                m_Velocity.y += Mathf.Sqrt(-(m_JumpHeight * m_Gravity));
-            }
-            else
-            {
-                //接触地面后限制向下的速度
-                m_Velocity.y = 0f;
+                m_Velocity = 0f;
+                m_Velocity += Mathf.Sqrt(-(m_JumpHeight * m_Gravity));
             }
         }
-        m_Velocity.y += m_Gravity * Time.deltaTime;
-        m_CharacterController.Move(m_Velocity * Time.deltaTime);
 
         //移动逻辑
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        if (isGround) // 仅在地面上时才允许移动
+
+        //控制角色的朝向
+        if (move != Vector3.zero)
         {
-            m_CharacterController.Move(move * Time.deltaTime * m_Speed);
-            //控制角色的朝向
-            if (move != Vector3.zero)
-            {
-                transform.forward = move;
-            }
+            transform.forward = move;
         }
 
-        //SimpMove
-        //左右方向键控制旋转
-        //transform.Rotate(0, Input.GetAxis("Horizontal") * m_Speed, 0);
-        //上下方向键控制移动
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
-        float moveSpeed = m_Speed * Input.GetAxis("Vertical");
-        m_CharacterController.SimpleMove(forward * moveSpeed);
+        m_Velocity += m_Gravity * Time.deltaTime;
+        //将移动的坐标和Y轴的坐标统一交给角色控制器移动
+        move.y = m_Velocity;
+        m_CharacterController.Move(move * Time.deltaTime);
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if ((hit.controller.collisionFlags & CollisionFlags.Sides) != 0)
+        {
+            Debug.Log($"两侧碰撞:{hit.gameObject.name}");
+        }
+
+        if ((hit.controller.collisionFlags & CollisionFlags.Below) != 0)
+        {
+            Debug.Log($"脚底部碰撞:{hit.gameObject.name}");
+        }
+
+        if ((hit.controller.collisionFlags & CollisionFlags.Above) != 0)
+        {
+            Debug.Log($"头顶部碰撞:{hit.gameObject.name}");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log($"进入触发器:{other.name}");
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+
     }
 }
