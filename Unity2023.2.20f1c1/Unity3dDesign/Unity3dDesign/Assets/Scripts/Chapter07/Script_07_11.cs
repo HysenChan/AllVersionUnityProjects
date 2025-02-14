@@ -5,6 +5,17 @@ public class Script_07_11 : MonoBehaviour
 {
     private void Update()
     {
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+        if (move != Vector3.zero)
+        {
+            Debug.Log($"方向键{move}");
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Debug.Log($"攻击键");
+        }
+
         if (Input.GetKeyDown(KeyCode.A))
         {
             Debug.Log("按下A键事件");
